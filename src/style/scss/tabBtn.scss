@@ -1,0 +1,26 @@
+.tab-nav{
+  width:7.5rem;
+}
+.tab-title{
+  width:7.5rem;
+  height:0.8rem;
+  background: #fff;
+  a{
+    float: left;
+    width:3.75rem;
+    height:0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    font-size: 0.3rem;
+    color: #333;
+    text-decoration: none;
+  }
+}
+.router-link-active{
+  color: #1f5508;
+  background: #ccc;
+  opacity: .5;
+}
+.tabs{
+  width:7.5rem;
+}

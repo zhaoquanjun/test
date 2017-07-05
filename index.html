@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no,
+  	initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+
+  <!--safari禁止浏览器自己把页面中的数字识别为电话号码-->
+  <meta name="format-detection" content="telephone=no" />
+
+  <!--把苹果手机浏览器中的菜单栏工具栏隐藏-->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <!--控制状态栏显示样式-->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!--设置苹果手机到头后在下来出现的那个黑色背景框中的标题的-->
+  <meta name="apple-mobile-web-app-title" content="标题">
+
+  <!--iphone私有meta，指定iphone中safari顶端状态条的样式-->
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+
+  <!--允许iphone的safari进行全屏浏览-->
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <title>vue-music</title>
+  <link rel="shortcut icon" href="static/images/favicon.icon" type="image/x-icon"/>
+  <script type="text/javascript">
+    ;(function (desW) {
+        var winW = document.documentElement.clientWidth || document.body.clientWidth;
+        document.documentElement.style.fontSize = winW/desW*100+'px'
+    })(750)
+  </script>
+</head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

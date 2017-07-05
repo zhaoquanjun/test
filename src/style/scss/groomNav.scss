@@ -1,0 +1,49 @@
+
+.tab-navList{
+  //display: none;
+  width:7.5rem;
+  background: #fff;
+  margin-top: 0.2rem;
+  p{
+    font-size: 0.25rem;
+  }
+  a{
+    text-decoration: none;
+  }
+  .song-sheet{
+    text-align: center;
+    height:0.6rem;
+    width:7.5rem;
+    line-height: 0.6rem;
+    font-size: 0.3rem;
+    color: #666;
+  }
+  li{
+    width:3.75rem;
+    float: left;
+    background: #fff;
+    padding-top: 0.05rem;
+    padding-bottom: 0.15rem;
+    img{
+      height:3.75rem;
+    }
+    .title{
+      width:3.35rem;
+      line-height: 0.5rem;
+      font-size: 0.27rem;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+      overflow: hidden;
+      color: #333;
+      padding-left: 0.2rem;
+      padding-right: 0.2rem;
+    }
+    .author{
+      color: #333;
+      line-height: 0.3rem;
+      padding-left: 0.2rem;
+      padding-right: 0.2rem;
+    }
+  }
+
+}
