@@ -19,9 +19,12 @@
   import Swiper from 'vue-swiper'
   import Banner from './banner.vue'
   import {GroomNav, SongSheet} from '../components'
+  import bus from '../bus'
   export default{
     data(){
-      return {}
+      return {
+          flag:Boolean
+      }
     },
     components: {
       GroomNav,
@@ -29,6 +32,11 @@
       Banner,
       Swiper
     },
-    methods: {}
+    methods: {},
+    mounted(){
+        bus.$on('change',function (msg) {
+          this.flag = msg;
+        })
+    }
   }
 </script>

@@ -6,7 +6,7 @@
     </div>
     <div class="sheetTitle">
       <div class="sheetTitle_left">
-        <h1>2017走心歌曲 | 敲击人类心灵最深处</h1>
+        <h1>2017走心歌曲 | 敲击人类心灵深处的音符</h1>
         <p>44.6万播放 来自：Carlton</p>
       </div>
       <div class="sheetTitle_right">
@@ -19,7 +19,7 @@
       <ul>
         <li class="contentItem" v-for="info in infos">
           <div class="content_left" @click="audioPlay($event)">
-            <audio src=src  :src="info.url" :name=info.name></audio>
+            <audio src=src                      :src="info.url" :name=info.name></audio>
             <h2>{{ info.name }}</h2>
             <p>{{ info.singer }}</p>
           </div>
@@ -39,6 +39,7 @@
 <script>
 
   import Controller from '../components/startControl.vue'
+  import bus from '../bus.js'
   import jquery from 'jquery'
   var $ = jquery;
   document.onscroll = function () {
@@ -73,18 +74,16 @@
           {name: '微光', singer: '蔚雨芯', url: require('../../static/music/微光.mp3')},
           {name: '下一站茶山刘', singer: '房东的猫', url: require('../../static/music/下一站茶山刘.mp3')},
         ],
+        player: false
       }
     },
     components: {
       Controller
     },
-    watch: {},
     methods: {
-      bgChange(){
-        alert(1);
-
-      },
       audioPlay(event){
+        this.player = !this.player;
+        bus.$emit('toControl', this.player);
         var el = event.currentTarget,
           $audio = $(el).children('audio'),
           audio = $audio[0],
@@ -94,15 +93,18 @@
           n.push(element);
         });
         if (audio.paused) {
-          audio.play();
-          for (var i = 0; i < n.length; i++) {
-            n[i].pause();
+          if (this.player) {
+            audio.play();
+            for (var i = 0; i < n.length; i++) {
+              n[i].pause();
+            }
+          } else {
+            audio.pause();
           }
         } else {
           audio.pause();
         }
-      },
-
+      }
 
     }
 
