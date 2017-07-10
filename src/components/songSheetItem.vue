@@ -19,7 +19,7 @@
       <ul>
         <li class="contentItem" v-for="info in infos">
           <div class="content_left" @click="audioPlay($event)">
-            <audio src=src                      :src="info.url" :name=info.name></audio>
+            <audio src=src :src="info.url" :name=info.name preload="none"></audio>
             <h2>{{ info.name }}</h2>
             <p>{{ info.singer }}</p>
           </div>
